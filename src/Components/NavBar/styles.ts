@@ -2,9 +2,27 @@ import styled from 'styled-components';
 import { shade } from 'polished';
 
 export const Container = styled.div`
+
+
+
+@media only screen and (max-width:1040px){
+      .navbar{
+        width: 100%;
+      .menu-burguer {
+        
+        margin: 5px 0;
+      width: 43px;
+         height: 32px;
+         right:0;
+      }
+      }}
+
+
+
+
+
   grid-area: nav;
   z-index: 2;
-  width: 51px;
   .linkArrowLeft {
     margin-left: 208px;
   }
@@ -16,7 +34,7 @@ export const Container = styled.div`
   .menu-burguer {
     cursor: pointer;
     margin-top: 150px;
-    width: 70px;
+    width: 60px;
     height: 50px;
     background: #fafafa;
     border-radius: 100%;
@@ -31,7 +49,6 @@ export const Container = styled.div`
   .navbar {
     background: linear-gradient(180deg, #0db2d6 8.12%, #4fda91 71.62%);
     height: 100%;
-    width: 50px;
     display: flex;
     justify-content: center;
     overflow: hidden;

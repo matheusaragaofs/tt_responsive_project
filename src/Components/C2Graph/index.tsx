@@ -9,6 +9,7 @@ interface dataprops {
 const MyResponsivePie: React.FC<dataprops> = ({ data }) => (
   <ResponsivePie
     data={data}
+    
     margin={{ top: 0, right: 10, bottom: 20, left: 30 }}
     innerRadius={0.85}
     colors={['#7FC008', '#DB8C28', '#EB5757']}

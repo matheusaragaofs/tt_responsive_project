@@ -14,7 +14,7 @@ import PeopleList from '../Components/PeopleList/index'
 const App:React.FC = () => {
   return (
       <Container>
-          <NavBar/>
+          <NavBar />
         <HistoryEvent>
             <div>
               <h1>Histórico de Eventos</h1>

@@ -3,27 +3,44 @@ import styled from 'styled-components'
 export const Container = styled.div`
     display: grid;
     height:100vh;
-    grid-template-columns: 0.35fr 3fr 3fr 3fr;
+    grid-template-columns: 0.1fr 3fr 3fr 3fr;
     grid-template-rows:  0.2fr repeat(2fr);
     grid-template-areas: 
                         "nav c1 c1 c2"
                         "nav c3 c3 c5"
                         "nav c6 c6 c5";
-  grid-gap: 0.2rem;
-  nav{
-    background-color: yellow;
-    grid-area: nav;
-  }
+  grid-gap: 0.3rem;
+  
  /* Tablet */
-  /* @media only screen and (max-width:1040px){
-    
 
+  @media only screen and (max-width:1023px){
+      grid-template-columns: 1fr 0.5fr 1fr;
+      grid-template-rows: 1fr 4fr 4fr 4fr 4fr; 
+      grid-template-areas: "nav nav nav"
+                            "c1 c1 c1"
+                            "c3 c3 c3"
+                            "c5 c5 c2"
+                            "c6 c6 c6"
+  }
+  @media screen and (max-width:695px){
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr repeat(6,1fr);
+    grid-gap: 0.2rem;
+    grid-template-areas: "nav"
+                          "c1"
+                          "c2"
+                          "c3"
+                          "c6"
+                          "c5"
 
-  } */
+};
+
 
 
 `
+
 export const HistoryEvent = styled.div`
+ 
   grid-area: c1;
   display: flex;
   background: #fff;
@@ -92,6 +109,10 @@ export const HistoryEvent = styled.div`
       margin-right: 25px;
     }
     select {
+      @media only screen and (max-width:437px){
+      width: 160px;
+    
+  }
       padding-left: 15px;
       background: #c4c4c4;
       margin-right: 12px;
@@ -200,7 +221,11 @@ export const AsideGraphic = styled.div`
     justify-content: space-between;
   }
   section {
+    @media only screen and (max-width:1023px){
+      height: 90%;
+    }
     display:flex;
+    justify-content: center;
     align-self: center;
     height: 70%;
     width: 345px;
@@ -340,6 +365,12 @@ export const AsideActionsContent = styled.div`
 
 export const C3Section = styled.div`
   grid-area: c3;
+  
+  @media only screen and (max-width:695px){
+    section {
+      flex-direction: column;
+    }
+  }
   section{
     display: flex;
     justify-content: space-between;
@@ -348,6 +379,11 @@ export const C3Section = styled.div`
 `
 
  export const C3Graphic = styled.div `
+
+    @media only screen and (max-width:695px){
+      width:100%;
+    }
+
   width:50%;
   background: #ffff;
   border: 0.5px solid #e4e4e4;
@@ -379,6 +415,9 @@ export const C3Section = styled.div`
   }
 
   & + div {
+    @media only screen and (max-width:1023px){
+    margin-left:0;
+  }
     margin-left: 10px;
   }
   header {
@@ -407,8 +446,7 @@ export const C3Section = styled.div`
     }
   }
    section {
-     width:90%;
-    height: 200px;
+    width: 90%;
 
   }
   div {
@@ -466,7 +504,14 @@ export const C3Section = styled.div`
  
  `
 export const C4Graphic = styled.div`
-width:50%;
+
+@media only screen and (max-width:695px){
+    width:100%;
+    margin-left:0;
+    }
+
+  width:50%;
+
 
   display: flex;
   flex-direction: column;
@@ -524,7 +569,7 @@ width:50%;
     }
   }
   section {
-    width:90%;
+    width: 95%;
     height: 200px;
   }
   div {
