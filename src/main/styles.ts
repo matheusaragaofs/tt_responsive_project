@@ -14,7 +14,13 @@ export const Container = styled.div`
     background-color: yellow;
     grid-area: nav;
   }
- 
+ /* Tablet */
+  /* @media only screen and (max-width:1040px){
+    
+
+
+  } */
+
 
 `
 export const HistoryEvent = styled.div`
@@ -47,7 +53,7 @@ export const HistoryEvent = styled.div`
     }
   }
   > section {
-    display: flex;
+    width:90%;
     height: 180px;
   }
  
@@ -401,6 +407,7 @@ export const C3Section = styled.div`
     }
   }
    section {
+     width:90%;
     height: 200px;
 
   }
@@ -517,6 +524,7 @@ width:50%;
     }
   }
   section {
+    width:90%;
     height: 200px;
   }
   div {
