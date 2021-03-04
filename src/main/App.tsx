@@ -14,13 +14,48 @@ const App:React.FC = () => {
   return (
       <Container>
         <nav>Nav</nav>
-        <div className="history-event-c1">History Event</div>
-        <div className="graph-action-plans-c2">GraphC2</div>
-        <div className="graph-inspections-c3">GraphC3</div>
-        <div className="graph-action-plans-c4">GraphC4</div>
-        <div className="action-plans-c5">Action Plans</div>
-        <div className="scheduled-inspections-c6">Scheduled Inspections </div>
+        <div className="history-event-c1">
+          <span>Painel de controle</span>
+          <div>
+            <HistoryEventGraph data={historyEventGraphDataset}/>
+          </div>
+        </div>
 
+        <div className="graph-action-plans-c2">GraphC2</div>
+
+        
+        <div className="graph-inspections-c3">GraphC3
+         <div>
+        <GraphOfGraphicContent data={datasetOfGraphOfGraphicContent}/>
+        </div>
+        </div>
+        
+
+        <div className="graph-action-plans-c4">GraphC4
+        <div>
+        <GraphOfGraphicContent data={datasetOfGraphOfGraphicContent}/>
+        </div>
+        </div>
+
+        <div className="action-plans-c5">Action Plans</div>
+
+
+
+        <ScheduledInspections>
+            <section>
+              <h1>Inspeções Agendadas</h1>
+              <form action="">
+                {/* <FiChevronDown /> */}
+                <select name="time">
+                  <option value="diario">diário</option>
+                  <option value="mensal">mensal</option>
+                  <option value="anual">anual</option>
+                </select>
+              </form>
+            </section>
+            <input placeholder="Pesquise" />
+            <PeopleList />
+          </ScheduledInspections>
 
       </Container> 
 

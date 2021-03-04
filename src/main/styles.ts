@@ -9,7 +9,7 @@ export const Container = styled.div`
                         "nav c1 c1 c2"
                         "nav c3 c4 c5"
                         "nav c6 c6 c5";
-
+  grid-gap: 0.2rem;
   nav{
     background-color: yellow;
     grid-area: nav;
@@ -19,6 +19,13 @@ export const Container = styled.div`
   .history-event-c1{
     background-color: blue; 
     grid-area: c1;
+    div {
+      display: flex;
+      justify-content: center;
+      border:1px solid white;
+      height: 200px;
+      width: 80%;
+    }
      }
 
     .graph-action-plans-c2{
@@ -29,37 +36,43 @@ export const Container = styled.div`
     .graph-inspections-c3{
       background-color: purple;
       grid-area:c3;
+      div{
+        
+      height: 200px;
+      width:80%;
+      }
 
     }
     .graph-action-plans-c4{
       background-color: crimson;
       grid-area:c4;
+      div{
+        
+        height: 200px;
+        width:80%;
+        }
+  
     }
     .action-plans-c5{
       background-color: blueviolet;
       grid-area:c5;
     }
 
-    .scheduled-inspections-c6{
-      background-color: aquamarine;
-      grid-area:c6;
-    }
-
 `
 
 
 export const ScheduledInspections = styled.div`
+  grid-area: c6;
+
   border: 0.5px solid #e4e4e4;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
   flex: 1;
-  justify-content: center;
+  /* justify-content: center; */
   margin-top: 25px;
   margin: 0 25px;
-  width: 748px;
   background: #ffff;
   section {
     display: flex;
-    width: 748px;
     align-items: center;
     justify-content: space-between;
   }
@@ -101,8 +114,8 @@ export const ScheduledInspections = styled.div`
   }
 
   input {
-        width: 704px;
     height: 34px;
+    width:95%;
     background: #fafafa;
     border: 1px solid #ebebeb;
     box-sizing: border-box;

@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   background: #fff;
-  width:  80%;
-  height: 400px;
+  height: 70%;
   margin: 0 15px;
   overflow: auto;
 `;
