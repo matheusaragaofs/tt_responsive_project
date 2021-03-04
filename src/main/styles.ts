@@ -2,62 +2,48 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
     display: grid;
-    grid-template-columns: 0.5fr 4fr 4fr 4fr;
-    grid-template-rows: 1fr 5fr 4fr;
-    grid-template-areas: "nav main main aside"
-                        "nav main main aside"
-                        "nav main main aside";
-    nav{
-        background-color: yellow;
-        height:100%;
-        grid-area: nav;
-    }
-    main{
-        position: relative;
-        header {
-            left: 0;
-        }
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-        
-        border: 1px solid black;
-        background-color: #FAFAFA;
-        height:100%;
-        grid-area: main;
+    height:100vh;
+    grid-template-columns: 0.2fr 3fr 3fr 3fr;
+    grid-template-rows:  0.2fr repeat(2fr);
+    grid-template-areas: 
+                        "nav c1 c1 c2"
+                        "nav c3 c4 c5"
+                        "nav c6 c6 c5";
 
-        .main-graphic {
+  nav{
+    background-color: yellow;
+    grid-area: nav;
+  }
 
-            width:80%;
-            /* border:1px solid black; */
-            height:200px;
-        }
-        .graphic-content{
-            width:80%;
-            border: 1px solid black;
-            height: 300px;
-            display: flex;
-            justify-content: space-around;
 
-        }
-    };
-    aside{
-        background-color: orange;
-        height:100%;
-        grid-area: aside;
+  .history-event-c1{
+    background-color: blue; 
+    grid-area: c1;
+     }
+
+    .graph-action-plans-c2{
+      background-color: orange;
+      grid-area:c2;
     }
 
-    @media (max-width:760px){
-    display:flex;
-    flex-direction: column;
-    main{
-        height: 60vh;
+    .graph-inspections-c3{
+      background-color: purple;
+      grid-area:c3;
 
     }
-    aside{
-        height:40vh
+    .graph-action-plans-c4{
+      background-color: crimson;
+      grid-area:c4;
     }
-}
+    .action-plans-c5{
+      background-color: blueviolet;
+      grid-area:c5;
+    }
+
+    .scheduled-inspections-c6{
+      background-color: aquamarine;
+      grid-area:c6;
+    }
 
 `
 
@@ -131,5 +117,45 @@ export const ScheduledInspections = styled.div`
     line-height: 25px;
     color: #999999;
     margin-bottom: 5px;
+  }
+`;
+
+export const AsideGraphic = styled.div`
+  margin-top: 60px;
+  width: 347px;
+  height: 269px;
+  background: #ffffff;
+  border: 0.5px solid #e4e4e4;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  > div {
+    svg {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+    flex: 1;
+    margin-top: 10px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  section {
+    height: 189px;
+    width: 345px;
+  }
+  p {
+    margin: 0;
+    font-size: 12px;
+    color: #b0b0b0;
+  }
+  strong {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333333;
   }
 `;
