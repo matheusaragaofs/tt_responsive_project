@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { shade } from 'polished';
 
 export const Container = styled.div`
+  grid-area: nav;
   z-index: 2;
   width: 51px;
   .linkArrowLeft {

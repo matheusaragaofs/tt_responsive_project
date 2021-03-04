@@ -1,25 +1,52 @@
 import React from 'react';
+import { Container, HistoryEvent ,ScheduledInspections, AsideGraphic, AsideContent, AsideActions, AsideActionsContent, C3Graphic, C4Graphic, C3Section}  from './styles'
 import { FiSettings, FiChevronDown, FiCircle} from 'react-icons/fi'
-import { Container, ScheduledInspections, AsideGraphic, AsideContent, AsideActions, AsideActionsContent, C3Graphic, C4Graphic, C3Section}  from './styles'
 import { Link } from 'react-router-dom'
-import HistoryEventGraph from '../Components/HistoryEventGraph'
+import NavBar from '../Components/NavBar'
+import HistoryEventGraphic from '../Components/HistoryEventGraph'
 import GraphOfGraphicContent from '../Components/GraphicContentGraph'
 import C2Graph from '../Components/C2Graph'
-import {C2Dataset} from '../Components/C2Graph/data'
 import { historyEventGraphDataset} from '../Components/HistoryEventGraph/data'
+import {C2Dataset} from '../Components/C2Graph/data'
 import {  datasetOfGraphOfGraphicContent } from '../Components/GraphicContentGraph/data'
 
 import PeopleList from '../Components/PeopleList/index'
 const App:React.FC = () => {
   return (
       <Container>
-        <nav>Nav</nav>
-        <div className="history-event-c1">
-          <span>Painel de controle</span>
-          <div>
-            <HistoryEventGraph data={historyEventGraphDataset}/>
-          </div>
-        </div>
+          <NavBar/>
+        <HistoryEvent>
+            <div>
+              <h1>Histórico de Eventos</h1>
+              <span>
+                <form action="">
+                  <FiChevronDown />
+                  <select name="time">
+                    <option value="diario">diário</option>
+                    <option value="mensal">mensal</option>
+                    <option value="anual">anual</option>
+                  </select>
+                </form>
+                <Link to="#">
+                  <FiSettings />
+                </Link>
+              </span>
+            </div>
+            <section>
+              <HistoryEventGraphic data={historyEventGraphDataset} />
+            </section>
+
+            <span>
+              <span>
+                <FiCircle color="#7FC008" /> <p>Inspeções realizadas</p>{' '}
+              </span>
+              <span>
+                <FiCircle color="#DB8C28" /> <p>Planos de ação criados</p>{' '}
+              </span>
+            </span>
+          </HistoryEvent>
+
+     
 
       {/* #C2  */}
         <AsideGraphic>
@@ -40,9 +67,7 @@ const App:React.FC = () => {
        
       <C3Section>
         <section>
-
         <C3Graphic>
-
           <header>
                 <span>
                   <strong>Inspeções</strong>
@@ -83,7 +108,6 @@ const App:React.FC = () => {
                   </span>
                 </span>
               </div>
-
 
 
             
@@ -200,7 +224,7 @@ const App:React.FC = () => {
             <section>
               <h1>Inspeções Agendadas</h1>
               <form action="">
-                {/* <FiChevronDown /> */}
+                <FiChevronDown />
                 <select name="time">
                   <option value="diario">diário</option>
                   <option value="mensal">mensal</option>

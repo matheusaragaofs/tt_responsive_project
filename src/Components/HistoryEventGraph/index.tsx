@@ -5,7 +5,7 @@ interface datasetProps {
   data: object[];
 }
 
-const MyResponsiveBar: React.FC<datasetProps> = ({ data }) => (
+const HistoryEventGraphic: React.FC<datasetProps> = ({ data }) => (
   <ResponsiveBar
     data={data}
     keys={['realizadas', 'naoRealizadas', 'emAndamento']}
@@ -68,4 +68,4 @@ const MyResponsiveBar: React.FC<datasetProps> = ({ data }) => (
   />
 );
 
-export default MyResponsiveBar;
+export default HistoryEventGraphic;

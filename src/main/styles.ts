@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
     display: grid;
     height:100vh;
-    grid-template-columns: 0.2fr 3fr 3fr 3fr;
+    grid-template-columns: 0.35fr 3fr 3fr 3fr;
     grid-template-rows:  0.2fr repeat(2fr);
     grid-template-areas: 
                         "nav c1 c1 c2"
@@ -14,35 +14,102 @@ export const Container = styled.div`
     background-color: yellow;
     grid-area: nav;
   }
-
-
-  .history-event-c1{
-    background-color: blue; 
-    grid-area: c1;
-    div {
-      display: flex;
-      justify-content: center;
-      border:1px solid white;
-      height: 200px;
-      width: 80%;
-    }
-     }
-
-
  
 
 `
+export const HistoryEvent = styled.div`
+  grid-area: c1;
+  display: flex;
+  background: #fff;
+  flex-direction: column;
+  border: 0.5px solid #e4e4e4;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  > span {
+    height: 50px;
+    width: auto;
+    span {
+      svg {
+        margin-right: 5px;
+        width: 10px;
+        height: 10px;
+      }
+      margin-left: 40px;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      p {
+        margin: 0;
+        color: #161616;
+        font-size: 9px;
+      }
+    }
+  }
+  > section {
+    display: flex;
+    height: 180px;
+  }
+ 
+  div {
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      svg {
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+      }
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  h1 {
+    margin-top: 19px;
+    margin-left: 32px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #333333;
+    line-height: 21px;
+  }
+  form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      position: absolute;
+      font-size: 25px;
+      right: 0;
+      margin-right: 25px;
+    }
+    select {
+      padding-left: 15px;
+      background: #c4c4c4;
+      margin-right: 12px;
+      width:200px;
+      height: 28px;
+      border-radius: 100px;
+      color: #333333;
+      font-weight: 600;
+      border: 0;
+      size: 14px;
+      line-height: 21px;
+      outline: none;
+      -webkit-appearance: none;
+    }
+  }
+`;
 
 
 export const ScheduledInspections = styled.div`
   grid-area: c6;
-
   border: 0.5px solid #e4e4e4;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
   flex: 1;
   /* justify-content: center; */
-  margin-top: 25px;
-  margin: 0 25px;
   background: #ffff;
   section {
     display: flex;
@@ -125,12 +192,11 @@ export const AsideGraphic = styled.div`
     margin-left: 10px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
   }
   section {
     display:flex;
     align-self: center;
-    height: 189px;
+    height: 70%;
     width: 345px;
   }
   p {
