@@ -1,4 +1,8 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
+
+interface AsideActionsContentProps {
+  finished: boolean;
+}
 
 export const Container = styled.div`
     display: grid;
@@ -32,7 +36,6 @@ export const Container = styled.div`
                           "c3"
                           "c6"
                           "c5"
-
 };
 
 
@@ -224,6 +227,9 @@ export const AsideGraphic = styled.div`
     @media only screen and (max-width:1023px){
       height: 90%;
     }
+    @media only screen and (max-width:695px){
+      height: 70%;
+    }
     display:flex;
     justify-content: center;
     align-self: center;
@@ -323,7 +329,18 @@ export const AsideActions = styled.div`
   overflow: auto;
 `;
 
-export const AsideActionsContent = styled.div`
+export const AsideActionsContent = styled.div<AsideActionsContentProps>`
+
+  .pendency-span{
+    display:flex;
+    ${props => props.finished && css`
+      display:none;
+    `}  
+  }
+  .pendency-finished{
+    display: flex;
+    
+  }
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid #ebebeb;
@@ -344,7 +361,7 @@ export const AsideActionsContent = styled.div`
   }
   div:first-child {
     span {
-      width: 66px;
+      /* width: 66px; */
       p {
         text-align: center;
         border: 1px solid #7fc008;

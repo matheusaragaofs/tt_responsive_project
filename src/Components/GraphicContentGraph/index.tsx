@@ -7,7 +7,7 @@ interface dataProps {
 const GraphOfGraphicContent: React.FC<dataProps> = ({ data }) => (
   <ResponsivePie
     data={data}
-    margin={{ top: 14, right: 40, bottom: 10, left: 100 }}
+    margin={{ top: 14, right: 60, bottom: 10, left: 100 }}
     innerRadius={0.8}
     colors={['#7FC008', '#DB8C28', '#EB5757']}
     borderColor={{ from: 'color', modifiers: [['darker', 0.2]] }}

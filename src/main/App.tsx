@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, HistoryEvent ,ScheduledInspections, AsideGraphic, AsideContent, AsideActions, AsideActionsContent, C3Graphic, C4Graphic, C3Section}  from './styles'
-import { FiSettings, FiChevronDown, FiCircle} from 'react-icons/fi'
+import { FiSettings, FiChevronDown, FiCircle, FiChevronRight} from 'react-icons/fi'
+import PeopleList from '../Components/PeopleList/index'
 import { Link } from 'react-router-dom'
 import NavBar from '../Components/NavBar'
 import HistoryEventGraphic from '../Components/HistoryEventGraph'
@@ -10,8 +11,11 @@ import { historyEventGraphDataset} from '../Components/HistoryEventGraph/data'
 import {C2Dataset} from '../Components/C2Graph/data'
 import {  datasetOfGraphOfGraphicContent } from '../Components/GraphicContentGraph/data'
 
-import PeopleList from '../Components/PeopleList/index'
+import { useCustomers } from '../hooks/customers/index';
+
+
 const App:React.FC = () => {
+  const {customers} = useCustomers();
   return (
       <Container>
           <NavBar />
@@ -46,9 +50,6 @@ const App:React.FC = () => {
             </span>
           </HistoryEvent>
 
-     
-
-      {/* #C2  */}
         <AsideGraphic>
               <div>
                 <span>
@@ -164,8 +165,6 @@ const App:React.FC = () => {
 
         </C3Section>
        
-        
-      
 
         <AsideContent>
               <section>
@@ -187,38 +186,29 @@ const App:React.FC = () => {
                 </select>
               </form>
               <AsideActions>
-                  <AsideActionsContent >
+                  {customers.map(customer => (
+                  <AsideActionsContent finished={customer.finished} key={customer.id}>
                     <div>
-                      <strong>Microsoft Actions</strong>
-                      <span>
-                        <p>Realizado</p>
+                      <strong>{customer.plano}</strong>
+                      <span className='pendency-finished'>
+                        <span className='pendency-span'>
+                        <p className='pendency'>Pendente</p>
+                        <FiChevronRight/>
+                        </span>
+                        <p>  Realizado</p>
                       </span>
+
                     </div>
 
                     <div>
-                      <p>responsável:Matheus Aragão</p>
-                      <span>08:32 04/03/2021</span>
+                      <p>responsável: {customer.name}</p>
+                      <span>{customer.date}</span>
                     </div>
                   </AsideActionsContent>
-                  <AsideActionsContent >
-                    <div>
-                      <strong>Microsoft Actions</strong>
-                      <span>
-                        <p>Realizado</p>
-                      </span>
-                    </div>
-
-                    <div>
-                      <p>responsável:Matheus Aragão</p>
-                      <span>08:32 04/03/2021</span>
-                    </div>
-                  </AsideActionsContent>
+                ))}
               </AsideActions>
 
             </AsideContent>
-
-
-
 
         <ScheduledInspections>
             <section>

@@ -9,7 +9,8 @@ export const Container = styled.div`
       .navbar{
         width: 100%;
       .menu-burguer {
-        
+        background:none;
+        color: #FAFAFA;
         margin: 5px 0;
       width: 43px;
          height: 32px;

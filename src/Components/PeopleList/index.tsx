@@ -1,13 +1,13 @@
 import React from 'react';
 import { Container, Header, Content } from './styles';
-// import { useCustomers } from '../../../hooks/customers';
+import { useCustomers } from '../../hooks/customers/index';
 
 const PeopleList: React.FC = () => {
-//   const { customers } = useCustomers();
+  const { customers } = useCustomers();
 
   return (
       <Container>
-        <Header>
+      <Header>
           <strong>Nome</strong>
 
           <span>
@@ -16,46 +16,16 @@ const PeopleList: React.FC = () => {
             <strong>Ultima atualização</strong>
           </span>
         </Header>
-          <Content>
-            <p>Matheus Aragão</p>
+        {customers.map(customer => (
+          <Content key={customer.id}>
+            <p>{customer.name}</p>
             <span>
-              <p>10</p>
-              <p>20</p>
-              <p>08/26/12 8h:23</p>
+              <p>{customer.planejado}</p>
+              <p>{customer.realizado}</p>
+              <p>{customer.date}</p>
             </span>
           </Content>
-          <Content>
-            <p>Matheus Aragão</p>
-            <span>
-              <p>10</p>
-              <p>20</p>
-              <p>08/26/12 8h:23</p>
-            </span>
-          </Content>
-          <Content>
-            <p>Matheus Aragão</p>
-            <span>
-              <p>10</p>
-              <p>20</p>
-              <p>08/26/12 8h:23</p>
-            </span>
-          </Content>
-          <Content>
-            <p>Matheus Aragão</p>
-            <span>
-              <p>10</p>
-              <p>20</p>
-              <p>08/26/12 8h:23</p>
-            </span>
-          </Content>
-          <Content>
-            <p>Matheus Aragão</p>
-            <span>
-              <p>10</p>
-              <p>20</p>
-              <p>08/26/12 8h:23</p>
-            </span>
-          </Content>
+        ))}
       </Container>
   )
 }

@@ -1,0 +1,71 @@
+{
+    "customers":[
+
+        [
+            {
+                "id":1,
+                "name":"Matheus Aragão",
+                "plano":"Google",
+                "planejado":21,
+                "realizado":10,
+                "date":"08:10 10/10/2010",
+                "finished": false
+            },
+
+            {
+                "id":2,
+                "name":"Gabriel Aragão",
+                "plano":"Facebook",
+                "planejado":13,
+                "realizado":33,
+                "date":"14:10 20/12/2009",
+                "finished": true
+            },
+            {
+                "id":3,
+                "name":"Eduardo Andrade",
+                "planejado":12,
+                "plano":"Microsoft",
+                "realizado":4,
+                "date":"16:10 2/10/1965",
+                "finished": true
+            },
+            {
+                "id":4,
+                "name":"Mihael Guedes",
+                "plano":"Amazon",
+                "planejado":4,
+                "realizado":10,
+                "date":"04:10 11/10/2010",
+                "finished": true
+            },
+            {
+                "id":5,
+                "name":"Eleonor Tenor",
+                "plano":"Twitter Actions",
+                "planejado":2,
+                "realizado":3,
+                "date":"03:10 14/03/2009",
+                "finished": true
+            },
+            {
+                "id":6,
+                "name":"Astrid Ingrils",
+                "plano":"Netflix Actions",
+                "planejado":13,
+                "realizado":12,
+                "date":"01:10 16/03/2021",
+                "finished": true
+            },
+            {
+                "id":7,
+                "name":"John Wallterful",
+                "plano":"Starbucks actions",
+                "planejado":2,
+                "realizado":3,
+                "date":"05:10 21/10/2010",
+                "finished": true
+            }
+        ]
+]
+}
