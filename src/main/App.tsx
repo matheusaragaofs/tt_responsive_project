@@ -1,6 +1,6 @@
 import React from 'react';
-import { FiSettings, FiChevronDown} from 'react-icons/fi'
-import { Container, ScheduledInspections, AsideGraphic, AsideContent, AsideActions, AsideActionsContent}  from './styles'
+import { FiSettings, FiChevronDown, FiCircle} from 'react-icons/fi'
+import { Container, ScheduledInspections, AsideGraphic, AsideContent, AsideActions, AsideActionsContent, C3Graphic, C4Graphic, C3Section}  from './styles'
 import { Link } from 'react-router-dom'
 import HistoryEventGraph from '../Components/HistoryEventGraph'
 import GraphOfGraphicContent from '../Components/GraphicContentGraph'
@@ -37,19 +37,111 @@ const App:React.FC = () => {
               </section>
             </AsideGraphic>
 
-        
-        <div className="graph-inspections-c3">GraphC3
-         <div>
-        <GraphOfGraphicContent data={datasetOfGraphOfGraphicContent}/>
-        </div>
-        </div>
-        
+       
+      <C3Section>
+        <section>
 
-        <div className="graph-action-plans-c4">GraphC4
-        <div>
-        <GraphOfGraphicContent data={datasetOfGraphOfGraphicContent}/>
-        </div>
-        </div>
+        <C3Graphic>
+
+          <header>
+                <span>
+                  <strong>Inspeções</strong>
+                  <p>status do dia</p>
+                </span>
+                <Link to="#">
+                  <FiSettings />
+                </Link>
+              </header>
+              <section>
+                <GraphOfGraphicContent data={datasetOfGraphOfGraphicContent} />
+              </section>
+              <div>
+                <span>
+                  <span>
+                    <FiCircle color="#7FC008" />
+                    <p>Realizadas - 58.6%</p>
+                  </span>
+                  <span>
+                    <FiCircle color="#DB8C28" />
+                    <p>Em aberto - 34.9%</p>
+                  </span>
+                  <span>
+                    <FiCircle color="#EB5757" /> <p>Não Realizadas - 6.5%</p>
+                  </span>
+                </span>
+
+                <span className="averageTimeOne">
+                  <strong>Média de tempo</strong>
+                  <span>
+                    <p>Hoje</p> <p>10 min</p>
+                  </span>
+                  <span>
+                    <p>Últimos 7 dias</p> <p>10 min</p>
+                  </span>
+                  <span>
+                    <p>Últimos 30 dias</p> <p>10 min</p>
+                  </span>
+                </span>
+              </div>
+
+
+
+            
+            </C3Graphic>
+
+         <C4Graphic>
+            <header>
+                <span>
+                  <strong>Planos de ação</strong>
+                  <p>status do dia</p>
+                </span>
+                <Link to="#">
+                  <FiSettings />
+                </Link>
+              </header>
+              <section>
+                <GraphOfGraphicContent data={datasetOfGraphOfGraphicContent} />
+              </section>
+              <div>
+                <span>
+                  <span>
+                    <FiCircle color="#7FC008" />
+                    <p>Criados - 58.6%</p>
+                  </span>
+                  <span>
+                    <FiCircle color="#DB8C28" />
+                    <p>Finalizados - 34.9%</p>
+                  </span>
+                  <span>
+                    <FiCircle color="#EB5757" /> <p>Em aberto - 6.5%</p>
+                  </span>
+                </span>
+
+                <span className="averageTimeTwo">
+                  <strong>Média de tempo</strong>
+                  <span>
+                    <p>Hoje</p> <p>10 min</p>
+                  </span>
+                  <span>
+                    <p>Últimos 7 dias</p> <p>10 min</p>
+                  </span>
+                  <span>
+                    <p>Últimos 30 dias</p> <p>10 min</p>
+                  </span>
+                </span>
+              </div>
+              <Link to="#">
+                <p>visualizar detalhes</p>
+              </Link>
+
+
+        </C4Graphic> 
+        </section>
+
+        </C3Section>
+       
+        
+      
 
         <AsideContent>
               <section>
