@@ -1,11 +1,11 @@
 import React from 'react';
-import { FiSettings} from 'react-icons/fi'
-import { Container, ScheduledInspections, AsideGraphic }  from './styles'
+import { FiSettings, FiChevronDown} from 'react-icons/fi'
+import { Container, ScheduledInspections, AsideGraphic, AsideContent, AsideActions, AsideActionsContent}  from './styles'
 import { Link } from 'react-router-dom'
 import HistoryEventGraph from '../Components/HistoryEventGraph'
 import GraphOfGraphicContent from '../Components/GraphicContentGraph'
-import GraphicAside from '../Components/AsideGraphic'
-import { asideGraphicDataset } from '../Components/AsideGraphic/data'
+import C2Graph from '../Components/C2Graph'
+import {C2Dataset} from '../Components/C2Graph/data'
 import { historyEventGraphDataset} from '../Components/HistoryEventGraph/data'
 import {  datasetOfGraphOfGraphicContent } from '../Components/GraphicContentGraph/data'
 
@@ -21,7 +21,21 @@ const App:React.FC = () => {
           </div>
         </div>
 
-        <div className="graph-action-plans-c2">GraphC2</div>
+      {/* #C2  */}
+        <AsideGraphic>
+              <div>
+                <span>
+                  <strong>Planos de ação</strong>
+                  <p>visão geral</p>
+                </span>
+                <Link to="#">
+                  <FiSettings />
+                </Link>
+              </div>
+              <section>
+                <C2Graph data={C2Dataset} />
+              </section>
+            </AsideGraphic>
 
         
         <div className="graph-inspections-c3">GraphC3
@@ -37,7 +51,56 @@ const App:React.FC = () => {
         </div>
         </div>
 
-        <div className="action-plans-c5">Action Plans</div>
+        <AsideContent>
+              <section>
+                <span>
+                  <strong>Planos de ação</strong>
+                  <p>atualizações</p>
+                </span>
+                <Link to="#">
+                  <FiSettings />
+                </Link>
+              </section>
+              <input type="text" />
+
+              <form action="">
+                <FiChevronDown />
+                <select name="finished">
+                  <option value="diario">pendente</option>
+                  <option value="mensal">realizada</option>
+                </select>
+              </form>
+              <AsideActions>
+                  <AsideActionsContent >
+                    <div>
+                      <strong>Microsoft Actions</strong>
+                      <span>
+                        <p>Realizado</p>
+                      </span>
+                    </div>
+
+                    <div>
+                      <p>responsável:Matheus Aragão</p>
+                      <span>08:32 04/03/2021</span>
+                    </div>
+                  </AsideActionsContent>
+                  <AsideActionsContent >
+                    <div>
+                      <strong>Microsoft Actions</strong>
+                      <span>
+                        <p>Realizado</p>
+                      </span>
+                    </div>
+
+                    <div>
+                      <p>responsável:Matheus Aragão</p>
+                      <span>08:32 04/03/2021</span>
+                    </div>
+                  </AsideActionsContent>
+              </AsideActions>
+
+            </AsideContent>
+
 
 
 

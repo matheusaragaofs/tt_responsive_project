@@ -30,7 +30,6 @@ export const Container = styled.div`
 
     .graph-action-plans-c2{
       background-color: orange;
-      grid-area:c2;
     }
 
     .graph-inspections-c3{
@@ -53,10 +52,7 @@ export const Container = styled.div`
         }
   
     }
-    .action-plans-c5{
-      background-color: blueviolet;
-      grid-area:c5;
-    }
+ 
 
 `
 
@@ -97,9 +93,9 @@ export const ScheduledInspections = styled.div`
       margin-right: 25px;
     }
     select {
+      min-width: 200px;
       background: #c4c4c4;
       margin-right: 12px;
-      width: 244px;
       height: 28px;
       border-radius: 100px;
       color: #333333;
@@ -134,14 +130,11 @@ export const ScheduledInspections = styled.div`
 `;
 
 export const AsideGraphic = styled.div`
-  margin-top: 60px;
-  width: 347px;
-  height: 269px;
+  grid-area: c2;
   background: #ffffff;
   border: 0.5px solid #e4e4e4;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
   border-radius: 5px;
-  margin-bottom: 25px;
   display: flex;
   flex-direction: column;
   > div {
@@ -158,6 +151,8 @@ export const AsideGraphic = styled.div`
     align-items: center;
   }
   section {
+    display:flex;
+    align-self: center;
     height: 189px;
     width: 345px;
   }
@@ -170,5 +165,126 @@ export const AsideGraphic = styled.div`
     font-weight: 600;
     font-size: 14px;
     color: #333333;
+  }
+`;
+
+export const AsideContent = styled.div`
+  grid-area: c5;
+  background: #ffffff;
+  border: 0.5px solid #e4e4e4;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  div {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  section {
+    margin-top: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span {
+      margin-left: 12px;
+    }
+    svg {
+      margin-right: 12px;
+      width: 24px;
+      height: 24px;
+    }
+  }
+  p {
+    margin: 0;
+    font-size: 12px;
+    color: #b0b0b0;
+  }
+  strong {
+    font-weight: 600;
+    font-size: 14px;
+    color: #333333;
+  }
+  input {
+    background: #fafafa;
+    border: 1px solid #ebebeb;
+    box-sizing: border-box;
+    border-radius: 100px;
+    width: 90%;
+    height: 34px;
+    outline: none;
+    margin: 10px 10px;
+  }
+  form {
+    margin-right: 18px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      position: absolute;
+      font-size: 25px;
+      right: 0;
+      margin-right: 20px;
+    }
+    select {
+      width:95%;
+      background: #c4c4c4;
+      height: 28px;
+      border-radius: 100px;
+      color: #333333;
+      font-weight: 600;
+      border: 0;
+      size: 14px;
+      line-height: 21px;
+      outline: none;
+      padding-left: 15px;
+      -webkit-appearance: none;
+      margin-bottom: 10px;
+    }
+  }
+`;
+
+export const AsideActions = styled.div`
+  height: 520px;
+  box-sizing: border-box;
+  margin: 0;
+  overflow: auto;
+`;
+
+export const AsideActionsContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #ebebeb;
+  & + div {
+    margin-top: 10px;
+  }
+  div {
+    margin: 0;
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  strong {
+    font-weight: 500;
+    font-size: 12px;
+    color: #333333;
+  }
+  div:first-child {
+    span {
+      width: 66px;
+      p {
+        text-align: center;
+        border: 1px solid #7fc008;
+        border-radius: 100px;
+        font-size: 10px;
+        color: #7fc008;
+        padding: 0.2px 1.5px;
+      }
+    }
+  }
+  div:nth-child(2) {
+    span {
+      font-size: 12px;
+      color: #bdbdbd;
+    }
   }
 `;
